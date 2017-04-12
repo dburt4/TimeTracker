@@ -26,7 +26,7 @@ namespace TimeTracker
             Debug.WriteLine("-------- ALL ACTIVITIES: -----------");
             foreach(Activity activity in activities)
             {
-                Debug.WriteLine("Activity: " + activity.activityName + " time spend: " + activity.timeSpent);
+                Debug.WriteLine("Activity: " + activity.activityName + " time spend: " + activity.timeSpent + ", which is productive?" + activity.isProductive);
             }
         }
 

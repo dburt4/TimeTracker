@@ -30,6 +30,23 @@ namespace TimeTracker
         {
             this.InitializeComponent();
             day = new Day();
+            Debug.WriteLine("Made a new day!");
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Debug.WriteLine("Navigated to this page: " + e.Parameter);
+            if(e.Parameter != "")
+            {
+                //Boolean isFromOtherPage = (Boolean)e.Parameter;
+                day = (Day)e.Parameter;
+                
+                this.InputGroupStarting.Visibility = Visibility.Collapsed;
+                this.InputGroupNormal.Visibility = Visibility.Visible;
+                
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,6 +57,7 @@ namespace TimeTracker
             day.AddActivity(activity);
             day.PrintAllActivities();
             activityInput.Text = "";
+            lastTime = DateTime.Now;
 
         }
 
@@ -49,6 +67,11 @@ namespace TimeTracker
             this.InputGroupNormal.Visibility = Visibility.Visible;
             lastTime = DateTime.Now;
             //Debug.WriteLine ("Clicked this button");
+        }
+
+        private void SeeReportButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DayReportPage), new Report(day));
         }
     }
 }

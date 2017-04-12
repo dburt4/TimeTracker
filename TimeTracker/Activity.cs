@@ -12,7 +12,7 @@ namespace TimeTracker
         public String activityName { get; set; }
         public int timeSpent { get; set; } 
         public Boolean isProductive { get; set; }
-        private List<String> productiveTerms = new List<string> {"code", "coding", "email", "research" };
+        private List<String> productiveTerms = new List<string> {"code", "coding", "coded", "email", "research" };
 
         public Activity(String activityName, DateTime startingTime)
         {
@@ -20,7 +20,8 @@ namespace TimeTracker
             DateTime endingTime = DateTime.Now;
             TimeSpan timeSpan = endingTime.Subtract(startingTime);
             //Debug.WriteLine("Seconds difference: " + timeSpan.Seconds);
-            timeSpent = timeSpan.Minutes;
+            //timeSpent = timeSpan.Minutes;
+            timeSpent = timeSpan.Seconds;
             //Debug.WriteLine("Minutes difference: " + minuteDifference);
             isProductive = CheckProductive(activityName);
             
