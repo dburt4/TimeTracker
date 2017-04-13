@@ -10,10 +10,12 @@ namespace TimeTracker
     class Day
     {
         private List<Activity> activities;
+        public DateTime lastTime { get; set; }
 
         public Day()
         {
             activities = new List<Activity>();
+            lastTime = new DateTime();
         }
 
         public void AddActivity(Activity activity)

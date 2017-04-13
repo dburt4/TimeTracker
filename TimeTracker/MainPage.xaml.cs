@@ -23,7 +23,7 @@ namespace TimeTracker
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private DateTime lastTime;
+        //private static DateTime lastTime;
         Day day;
 
         public MainPage()
@@ -53,11 +53,11 @@ namespace TimeTracker
         {
             TextBox activityInput = ActivityNameInput;
             //Debug.WriteLine("Clicked! + " + activityInput.Text);
-            Activity activity = new Activity(activityInput.Text, lastTime);
+            Activity activity = new Activity(activityInput.Text, day.lastTime);
             day.AddActivity(activity);
             day.PrintAllActivities();
             activityInput.Text = "";
-            lastTime = DateTime.Now;
+            day.lastTime = DateTime.Now;
 
         }
 
@@ -65,7 +65,7 @@ namespace TimeTracker
         {
             this.InputGroupStarting.Visibility = Visibility.Collapsed;
             this.InputGroupNormal.Visibility = Visibility.Visible;
-            lastTime = DateTime.Now;
+            day.lastTime = DateTime.Now;
             //Debug.WriteLine ("Clicked this button");
         }
 

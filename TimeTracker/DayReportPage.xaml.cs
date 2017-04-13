@@ -37,8 +37,9 @@ namespace TimeTracker
             report.printAllActivities();
             this.totalTimeSpentContainer.Text = report.totalTime.ToString();
             this.totalProductiveTimeSpentContainer.Text = report.totalProductiveTime.ToString();
-            this.percentTotalTimeSpent.Text = report.percentProductive + "%";
-
+            this.percentTotalTimeSpent.Text = Math.Round(report.percentProductive, 2) + "%";
+            this.avgFocusTimeContainer.Text = report.avgFocusTime.ToString();
+            //this.totalTimeContainer = report.totalTime;
         }
 
         //private void ReturnToInputLink_Click(object sender, RoutedEventArgs e)

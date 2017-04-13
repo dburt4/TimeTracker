@@ -12,12 +12,17 @@
         <TextBlock HorizontalAlignment="Left" Margin="37,100,0,0" TextWrapping="Wrap" Text="Total time spent:" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="37,155,0,0" TextWrapping="Wrap" Text="Total productive time spent:" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="37,210,0,0" TextWrapping="Wrap" Text="Percentage time spent productively:" VerticalAlignment="Top" FontSize="20"/>
+        <HyperlinkButton Content="Return to input page" HorizontalAlignment="Left" Margin="37,318,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+
         <!--<TextBlock x:Name=""" HorizontalAlignment="Left" Margin="360,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.099,-0.494"/>-->
         <TextBlock x:Name="totalTimeSpentContainer" HorizontalAlignment="Left" Margin="360,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock x:Name="totalProductiveTimeSpentContainer" HorizontalAlignment="Left" Margin="360,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock x:Name="percentTotalTimeSpent" HorizontalAlignment="Left" Margin="360,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <!--<HyperlinkButton x:Name="ReturnToInputLink" Content="Go back" HorizontalAlignment="Left" Margin="37,288,0,0" Click="ReturnToInputLink_Click" VerticalAlignment="Top"></HyperlinkButton>-->
-        <HyperlinkButton Content="Return to input page" HorizontalAlignment="Left" Margin="37,251,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,257,0,0" TextWrapping="Wrap" Text="Average focus time: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="avgFocusTimeContainer" HorizontalAlignment="Left" Margin="360,257,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <!--<TextBlock HorizontalAlignment="Left" Margin="37,293,0,0" TextWrapping="Wrap" Text="Total time spent:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="totalTimeSpentContainer" HorizontalAlignment="Left" Margin="360,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>-->
 
     </Grid>
 </Page>
