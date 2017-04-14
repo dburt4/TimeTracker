@@ -35,10 +35,10 @@ namespace TimeTracker
             base.OnNavigatedTo(e);
             report = (Report)e.Parameter;
             report.printAllActivities();
-            this.totalTimeSpentContainer.Text = report.totalTime.ToString();
-            this.totalProductiveTimeSpentContainer.Text = report.totalProductiveTime.ToString();
+            this.totalTimeSpentContainer.Text = report.totalTime / 60 + " hrs, " + report.totalTime % 60 + " mins";
+            this.totalProductiveTimeSpentContainer.Text = report.totalProductiveTime / 60 + " hrs, " + report.totalProductiveTime % 60 + " mins";
             this.percentTotalTimeSpent.Text = Math.Round(report.percentProductive, 2) + "%";
-            this.avgFocusTimeContainer.Text = report.avgFocusTime.ToString();
+            this.avgFocusTimeContainer.Text = report.avgFocusTime.ToString() + " mins";
             //this.totalTimeContainer = report.totalTime;
         }
 
