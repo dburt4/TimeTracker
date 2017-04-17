@@ -35,8 +35,10 @@ namespace TimeTracker
             base.OnNavigatedTo(e);
             report = (Report)e.Parameter;
             report.printAllActivities();
+            int unproductiveTime = report.totalTime - report.totalProductiveTime;
             this.totalTimeSpentContainer.Text = report.totalTime / 60 + " hrs, " + report.totalTime % 60 + " mins";
-            this.totalProductiveTimeSpentContainer.Text = report.totalProductiveTime / 60 + " hrs, " + report.totalProductiveTime % 60 + " mins";
+            this.totalProductiveTimeSpentContainer.Text = report.totalProductiveTime / 60 + " hrs, " + report.totalProductiveTime % 60 + " mins / " +
+                unproductiveTime / 60 + " hrs, " + unproductiveTime % 60 + "mins";
             this.percentTotalTimeSpent.Text = Math.Round(report.percentProductive, 2) + "%";
             this.avgFocusTimeContainer.Text = report.avgFocusTime.ToString() + " mins";
             //this.totalTimeContainer = report.totalTime;
@@ -48,6 +50,12 @@ namespace TimeTracker
         //}
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage), report.day);
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage), report.day);
 
