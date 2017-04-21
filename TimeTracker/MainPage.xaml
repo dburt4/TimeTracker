@@ -8,14 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel x:Name="InputGroupNormal" Visibility="Visible">
+        <StackPanel x:Name="InputGroupNormal" Visibility="Collapsed">
             <TextBlock HorizontalAlignment="Left" Margin="37,45,0,0" TextWrapping="Wrap" Text="What did you just finish doing?" VerticalAlignment="Top" FontSize="20"/>
             <TextBox x:Name="ActivityNameInput" HorizontalAlignment="Left" Margin="37,25,0,0" TextWrapping="Wrap" ToolTipService.ToolTip="Finished activity..." Text="" VerticalAlignment="Top" Width="274"/>
             <Button Content="Submit" HorizontalAlignment="Left" Margin="53,25,0,0" VerticalAlignment="Top" Click="Button_Click"></Button>
-            <Button Content="See day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="37 30, 0, 0" />
+            <Button x:Name="seeReportButton" Content="See day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="37 30, 0, 0" />
             <!--<HyperlinkButton x:Name="seeReportButton" Content="See the day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="53,75,0,0"></HyperlinkButton>-->
         </StackPanel>
-        <StackPanel x:Name="InputGroupStarting" Visibility="Collapsed">
+        <StackPanel x:Name="InputGroupStarting" Visibility="Visible">
             <TextBlock Text="Ready to start?" HorizontalAlignment="Left" Margin="37,45, 0, 0" VerticalAlignment="Top"></TextBlock>
             <Button x:Name="StartButton" Content="Start!" HorizontalAlignment="Left" Margin="53,25,0,0" VerticalAlignment="Top" Click="StartButton_Click" ></Button>
         </StackPanel>
