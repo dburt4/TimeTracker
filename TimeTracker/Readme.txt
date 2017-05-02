@@ -9,7 +9,9 @@ Things to do:
 
 -Some sort of menu bar for navigating
 
--Ability to choose whether an acivity is productive or not... but keep a default too somehow? 
+XAbility to choose whether an acivity is productive or not... but keep a default too somehow? 
+
+XLast activity was: _______
 
 -Page to see all the days activities (another page?)
 -- Ability to adjust activites in that ^ view 

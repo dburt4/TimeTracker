@@ -7,12 +7,25 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD2CDCD" Offset="0.068"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="White" Offset="0.428"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel x:Name="InputGroupNormal" Visibility="Collapsed">
             <TextBlock HorizontalAlignment="Left" Margin="37,45,0,0" TextWrapping="Wrap" Text="What did you just finish doing?" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox x:Name="ActivityNameInput" HorizontalAlignment="Left" Margin="37,25,0,0" TextWrapping="Wrap" ToolTipService.ToolTip="Finished activity..." Text="" VerticalAlignment="Top" Width="274"/>
-            <Button Content="Submit" HorizontalAlignment="Left" Margin="53,25,0,0" VerticalAlignment="Top" Click="Button_Click"></Button>
-            <Button x:Name="seeReportButton" Content="See day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="37 30, 0, 0" />
+            <StackPanel x:Name="nameAndProductiveContainer">
+                <TextBox x:Name="ActivityNameInput" HorizontalAlignment="Left" Margin="37,25,0,0" TextWrapping="Wrap" ToolTipService.ToolTip="Finished activity..." Text="" Width="274"/>
+                <ComboBox x:Name="ProductiveComboBox" ItemsSource="{x:Bind options}" HorizontalAlignment="Left" Margin="37, 5, 0, 0" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <Button Content="Submit" HorizontalAlignment="Left" Margin="53,15,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <TextBlock Text="Last activity:" HorizontalAlignment="Left" Margin="37,20, 0, 0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <TextBlock x:Name="lastActivityContainer" Text="- None -" Margin="37,10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300px"/>
+            <Button x:Name="seeReportButton" Content="See day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="37, 15, 0, 0" />
+
             <!--<HyperlinkButton x:Name="seeReportButton" Content="See the day's report" Click="SeeReportButton_Click" HorizontalAlignment="Left" Margin="53,75,0,0"></HyperlinkButton>-->
         </StackPanel>
         <StackPanel x:Name="InputGroupStarting" Visibility="Visible">

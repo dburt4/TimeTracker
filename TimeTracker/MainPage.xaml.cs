@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -25,11 +26,14 @@ namespace TimeTracker
     {
         //private static DateTime lastTime;
         Day day;
+        ObservableCollection<string> options = new ObservableCollection<string>();
 
         public MainPage()
         {
             this.InitializeComponent();
             day = new Day();
+            options.Add("Productive");
+            options.Add("Unproductive");
             Debug.WriteLine("Made a new day!");
         }
 
@@ -53,10 +57,13 @@ namespace TimeTracker
         {
             TextBox activityInput = ActivityNameInput;
             //Debug.WriteLine("Clicked! + " + activityInput.Text);
+            String isProductive = ProductiveComboBox.SelectedValue.ToString();
             Activity activity = new Activity(activityInput.Text, day.lastTime);
+            activity.isProductive = isProductive == "Productive" ? true : false;
             day.AddActivity(activity);
             day.PrintAllActivities();
             activityInput.Text = "";
+            lastActivityContainer.Text = activity.activityName + " (" + activity.timeSpent + " mins)";
             day.lastTime = DateTime.Now;
 
         }
@@ -73,5 +80,6 @@ namespace TimeTracker
         {
             this.Frame.Navigate(typeof(DayReportPage), new Report(day));
         }
+
     }
 }
